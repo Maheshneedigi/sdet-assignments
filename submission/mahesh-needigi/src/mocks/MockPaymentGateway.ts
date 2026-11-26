@@ -1,6 +1,7 @@
 import crypto from "crypto"
 import { ChargeRequest, PaymentGateway } from "../../fixture/PaymentGateway"
 import { WEBHOOK_SECRET } from "../../fixture/server"
+import { clear } from "console"
 
 export class MockPaymentGateway implements PaymentGateway {
     readonly recordedCharges: ChargeRequest[] = []
@@ -26,3 +27,4 @@ export class MockPaymentGateway implements PaymentGateway {
         return { status: "succeeded", transactionId: "txn_" + crypto.randomBytes(4).toString("hex") }
     }
 }
+ 

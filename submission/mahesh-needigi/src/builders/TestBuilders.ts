@@ -6,6 +6,7 @@ export class SubscriptionBuilder {
     setCustomer(id: string) { this.payload.customer_id = id; return this }
     setPlan(plan: string) { this.payload.plan = plan; return this }
     removePlan() { delete this.payload.plan; return this }
+    setpaymentmethod(id:string){this.payload.payment_method_id=id; return this}
     build() { return { ...this.payload } }
 }
 
